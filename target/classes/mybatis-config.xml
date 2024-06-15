@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <!--
+        properties 标签中的配置可以供整个配置文件使用，在任何位置都可以引用其中配置的值。
+        properties 标签可以通过子标签 property 标签来偶尔之一些子元素信息，也可以配置外部的动态文件。
+     -->
+    <properties resource="mysql.properties"/><!-- 也可以配置url， 但url和resource不能同时使用 -->
+
+<!-- 类型别名-->
+
+<!--    <typeAliases>-->
+<!--            <typeAlias alias="User" type="com.example.demo.entity.User"/>-->
+<!--    </typeAliases>-->
+
+    <!--对十五的管理和连接池的配置 -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--mappers映射器 -->
+    <mappers>
+<!--            映射文件方法1.一个一个的配置-->
+<!--            <mapper resource="com/example/demo/mapper/UserMapper.xml"/>-->
+<!--            <mapper class="com.xxxx,mapper.UserMapper"/>-->
+
+<!--            映射文件方法2. 自动扫描包内的Mapper接口与配置文件-->
+            <package name="com.xxxx.mapper.UserMapper.xml"/>
+    </mappers>
+
+</configuration>

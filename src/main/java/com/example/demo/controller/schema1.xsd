@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!--定义一个名为primaryStageController的复杂类型-->
+  <xs:complexType name="primaryStageController">
+    <!--定义一个序列-->
+    <xs:sequence/>
+  </xs:complexType>
+</xs:schema>

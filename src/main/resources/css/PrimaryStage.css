@@ -1,0 +1,5 @@
+/* 设置主边框面板的初始高度和宽度 */
+#mainBorderPane {
+    -fx-pref-height: 400.0;
+    -fx-pref-width: 600.0;
+}
